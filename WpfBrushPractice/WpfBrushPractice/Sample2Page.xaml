@@ -1,0 +1,71 @@
+﻿<Page x:Class="WpfBrushPractice.Sample2Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfBrushPractice"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Sample2Page">
+
+    <!-- このページでだけ使うリソースをここで定義します -->
+    <Page.Resources>
+        <!--
+            ハッチ パターンのブラシを自作します
+            Viewport の x, y は ハッチパターンを埋め尽くしたい面積で、
+                        パターンの開始地点です。
+            Viewport の width, height は ハッチパターンを埋め尽くしたい面積です
+            Viewbox の x, y は原点に合わせたいパターンの箇所です。
+            Viewbox の width, height はブラシのペン先の大きさのようなものです。
+        -->
+        <VisualBrush x:Key="myVisualBrush" TileMode="None"
+                     Viewport="0,0,100,100" ViewportUnits="Absolute"
+                     Viewbox="0,0,100,100" ViewboxUnits="Absolute"
+                     AlignmentX="Left" AlignmentY="Top">
+            <VisualBrush.Visual>
+                <Grid>
+                    <!-- 2行2列のグリッド -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- 四角 -->
+                    <Rectangle Grid.RowSpan="2" Grid.ColumnSpan="2"
+                               Width="100" Height="100" Fill="Orchid"/>
+
+                    <!-- 境界線 -->
+                    <Border Grid.RowSpan="2" Grid.ColumnSpan="2"
+                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Width="100" Height="100"
+                            BorderThickness="4"
+                            BorderBrush="DarkOrchid"/>
+
+                    <!-- 丸 -->
+                    <Ellipse Width="30" Height="30"
+                             Fill="DarkOrchid"/>
+                    <Ellipse Grid.Column="1"
+                             Width="30" Height="30"
+                             Fill="DarkOrchid"/>
+                    <Ellipse Grid.Row="1"
+                             Width="30" Height="30"
+                             Fill="DarkOrchid"/>
+                    <Ellipse Grid.Row="1" Grid.Column="1"
+                             Width="30" Height="30"
+                             Fill="DarkOrchid"/>
+                </Grid>
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </Page.Resources>
+
+    <Grid>
+        <!-- 四角を置きます -->
+        <Rectangle Width="100" Height="100" Fill="{StaticResource myVisualBrush}">
+            
+        </Rectangle>
+    </Grid>
+</Page>

@@ -24,5 +24,10 @@
         {
             frame.Source = new Uri("./Sample1Page.xaml", UriKind.Relative);
         }
+
+        private void Sample2Button_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Source = new Uri("./Sample2Page.xaml", UriKind.Relative);
+        }
     }
 }

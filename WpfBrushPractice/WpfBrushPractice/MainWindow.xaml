@@ -46,6 +46,7 @@
         <StackPanel>
             <Button Content="Home" Click="HomeButton_Click"/>
             <Button Content="Sample1" Click="Sample1Button_Click"/>
+            <Button Content="Sample2" Click="Sample2Button_Click"/>
         </StackPanel>
         
         <!-- 1列目 -->
