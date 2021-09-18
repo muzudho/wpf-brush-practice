@@ -64,8 +64,6 @@
 
     <Grid>
         <!-- 四角を置きます -->
-        <Rectangle Width="100" Height="100" Fill="{StaticResource myVisualBrush}">
-            
-        </Rectangle>
+        <Rectangle Width="100" Height="100" Fill="{StaticResource myVisualBrush}" />
     </Grid>
 </Page>
