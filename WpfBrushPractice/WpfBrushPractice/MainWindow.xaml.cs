@@ -1,20 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace WpfBrushPractice
+﻿namespace WpfBrushPractice
 {
+    using System;
+    using System.Windows;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -23,6 +11,18 @@ namespace WpfBrushPractice
         public MainWindow()
         {
             InitializeComponent();
+
+            frame.Source = new Uri("./HomePage.xaml", UriKind.Relative);
+        }
+
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Source = new Uri("./HomePage.xaml", UriKind.Relative);
+        }
+
+        private void Sample1Button_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Source = new Uri("./Sample1Page.xaml", UriKind.Relative);
         }
     }
 }
