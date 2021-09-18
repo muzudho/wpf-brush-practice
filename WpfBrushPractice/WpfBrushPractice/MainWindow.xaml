@@ -11,22 +11,23 @@
     <Window.Resources>
         <!--
             ハッチ パターンのブラシを自作します
-            Viewport の x, y は ハッチパターンを埋め尽くしたい面積で、パターンの開始地点です。
+            Viewport の x, y は ハッチパターンを埋め尽くしたい面積で、
+                        パターンの開始地点です。
             Viewport の width, height は ハッチパターンを埋め尽くしたい面積です
             Viewbox の x, y は原点に合わせたいパターンの箇所です。
             Viewbox の width, height はブラシのペン先の大きさのようなものです。
         -->
         <VisualBrush x:Key="MyVisualBrush" TileMode="Tile"
-                     Viewport="0,0,200,200" ViewportUnits="Absolute" Viewbox="0,0,150,150" ViewboxUnits="Absolute">
+                     Viewport="0,0,200,200" ViewportUnits="Absolute"
+                     Viewbox="0,0,150,150" ViewboxUnits="Absolute"
+                     AlignmentX="Left" AlignmentY="Top">
             <VisualBrush.Visual>
                 <Grid Background="Orchid">
                     <!-- 丸 -->
-                    <Ellipse HorizontalAlignment="Left" VerticalAlignment="Top"
-                             Margin="0,0,0,0"
+                    <Ellipse Margin="0,0,0,0"
                              Width="50" Height="50"
                              Fill="DarkOrchid"/>
-                    <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top"
-                               Margin="50,50,0,0"
+                    <Rectangle Margin="50,50,0,0"
                                Width="50" Height="50"
                                Fill="SkyBlue" />
                 </Grid>
